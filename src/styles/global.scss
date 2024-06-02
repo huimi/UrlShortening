@@ -89,9 +89,10 @@ a.btn {
     height: calc(100% - 72px);
     width: 100%;
     display: flex;
+    gap: 1em;
     .title {
       min-width: 50%;
-      margin: auto 1em auto 0;
+      margin: auto;
     }
   }
 }
@@ -99,7 +100,6 @@ a.btn {
 @media screen and (max-width: $small) {
   .introduction {
     flex-direction: column;
-    row-gap: 1em;
     #mainSvg {
       order: 0;
       min-width: 600px;
