@@ -1,0 +1,29 @@
+@use 'global';
+
+nav {
+    display: flex;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    .nav-wrap {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 1em;
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
+    }
+    ul {
+        display: flex;
+        column-gap: 0.8em;
+    }
+    a {
+        color: global.$grayishViolet;
+        font-size: 0.8em;
+        font-weight: 500;
+    }
+    a:not(.btn):hover {
+        color: global.$veryDarkBlue;
+    }   
+}

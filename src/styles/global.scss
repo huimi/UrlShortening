@@ -1,0 +1,112 @@
+@font-face { 
+  font-family: 'Poppins'; 
+  src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: 'Poppins'; 
+  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+$cyan: hsl(180, 66%, 49%);
+$arkViolet: hsl(257, 27%, 26%);
+    
+$red: hsl(0, 87%, 67%);
+
+$gray: hsl(0, 0%, 75%);
+$grayishViolet: hsl(257, 7%, 63%);
+$veryDarkBlue: hsl(255, 11%, 22%);
+$veryDarkViolet: hsl(260, 8%, 14%);
+
+$small: 600px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 18px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1.5em;
+  color: $grayishViolet;
+}
+
+// General End
+
+a.btn {
+  color: white;
+  background-color: $cyan;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  border-radius: 2em;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.container {
+  margin: auto;
+  width: 85%;
+  @media screen and (max-width: $small) {
+    width: 90%;
+    margin-bottom: 2em;
+  }
+}
+
+.main {
+  min-height: 100vh;
+  .introduction {
+    height: calc(100% - 72px);
+    width: 100%;
+    display: flex;
+    .title {
+      min-width: 50%;
+      margin: auto 1em auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: $small) {
+  .introduction {
+    flex-direction: column;
+    row-gap: 1em;
+    #mainSvg {
+      order: 0;
+      min-width: 600px;
+    }
+    .title {
+      order: 1;
+      text-align: center;
+    }
+  }
+}

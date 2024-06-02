@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/navbar';
+import Button from './components/button';
+import iw from './assets/illustration-working.svg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="content">
+      <div className="main container">
+        <Navbar />
+        <div className="introduction">
+          <div className="title">
+            <h1>More than just shorter links</h1>
+            <p>Build your brand’s recognition and get detailed insights 
+            on how your links are performing.</p>
+            <Button text="Get Started"/>
+          </div>
+          <img id="mainSvg" alt="iullstration-workding" src={iw} />
+        </div>
+      </div>
+      <div className="container">
+        <input className="url-form"></input>
+        {/* <Button text={"Shorten It!"} /> */}
+      </div>
+      <div className="container">
+        <h3>Advance Statistics</h3>
+        <span className="subtitle">Track how your links are performing across the web with our advanced statistics dashboard.</span>
+      </div>
+      <div className="container">
+        <h3>Boost your links today</h3>
+        {/* <Button text={"Get Started"} /> */}
+      </div>
+      {/* <Footer /> */}
     </div>
   );
 }
