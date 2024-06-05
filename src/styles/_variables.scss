@@ -1,0 +1,88 @@
+@font-face { 
+  font-family: 'Poppins'; 
+  src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face { 
+  font-family: 'Poppins'; 
+  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+$cyan: hsl(180, 66%, 49%);
+$darkViolet: hsl(257, 27%, 26%);
+    
+$red: hsl(0, 87%, 67%);
+
+$gray: hsl(0, 0%, 75%);
+$grayWhite: #eff1f7;
+$grayishViolet: hsl(257, 7%, 63%);
+$veryDarkBlue: hsl(255, 11%, 22%);
+$veryDarkViolet: hsl(260, 8%, 14%);
+
+$small: 600px;
+$medium: 768px;
+
+$fontSize: 18px;
+
+$fontFamily: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
+
+@mixin for-small-device {
+  @media screen and (max-width: $small) {
+    @content;
+  }
+}
+@mixin for-medium-device {
+  @media screen and (max-width: $medium) {
+    @content;
+  }
+}
+@mixin for-not-small-device {
+  @media screen and (min-width: $small) {
+    @content;
+  }
+}
+@mixin for-not-medium-device {
+  @media screen and (min-width: $medium) {
+    @content;
+  }
+}
+
+@mixin reset-input {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+@mixin reset-ul {
+  list-style: none;
+}
+
+@mixin general-a-link {
+  text-decoration: none;
+  &:hover {
+    color: $veryDarkBlue;
+  }
+}
+
+@mixin general-a-btn {  
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+  background-color: $cyan;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  border-radius: 2em;
+  display: inline-block;
+  text-align: center;
+  &:hover {
+    opacity: 0.8;
+  }
+}

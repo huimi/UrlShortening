@@ -1,7 +1,7 @@
 
 function Link({page, text}) {
     return (
-        <a href={ page }>{ text }</a>
+        <a className="link" href={ page }>{ text }</a>
     );
 }
 

@@ -1,0 +1,199 @@
+@use "variables" as v;
+@use "navbar" as navbar;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-family: v.$fontFamily;
+  font-size: v.$fontSize;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: v.$veryDarkBlue;
+}
+
+p {
+  margin: 0 0 1.5em;
+  color: v.$grayishViolet;
+}
+
+.container {
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  @media screen and (max-width: v.$small) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+.title-container {
+  text-align: center;
+}
+
+// main section
+.main {
+  min-height: 100vh;
+  .introduction {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    @include v.for-small-device {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2em;
+    }
+    .title-container {
+      min-width: 50%;
+      text-align: left;
+      a {
+        @include v.general-a-btn;
+      }
+      @include v.for-small-device {
+        width: 100%;
+        text-align: center;
+        order: 1;
+      }
+    }
+  }
+  .form-container {
+    margin-top: auto;
+    border-radius: 0.4em;
+    padding: 2em;
+    transform: translateY(50%);
+    background-color: v.$darkViolet;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 1em;
+    // background settings
+    background-image: url('../assets/bg-shorten-desktop.svg');
+    background-size: 100% 100%;
+    @include v.for-small-device {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5em;
+      // background settings
+      background-image: url('../assets/bg-shorten-mobile.svg');
+      background-position: right top;
+      background-size: auto 70%;
+      background-repeat: no-repeat;
+    }
+    input {
+      @include v.reset-input;
+      border: 2px solid white;
+      padding: 0.5em;
+      border-radius: 0.4em;
+    }
+    a {
+      @include v.general-a-btn;
+      border-radius: 0.4em;
+    }
+  }
+}
+
+// feature section
+.feature {
+  background-color: v.$grayWhite;
+  padding-top: 4.5em;
+  padding-bottom: 8em;
+  @include v.for-small-device {
+    padding-top: 7em;
+  }
+  .history-container {
+    border-radius: 0.2em;
+    background-color: white;
+    color: v.$veryDarkViolet;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    @include v.for-not-medium-device {
+      align-items: center;
+      flex-direction: row;
+    }
+    .url-container {
+      padding: 0.8em;
+      margin-right: auto;
+      @include v.for-medium-device {
+        width: 100%;
+        border-bottom: 1px solid v.$grayWhite;
+      }
+    }
+    .url-right {
+      color: v.$cyan;
+      @include v.for-medium-device {
+        margin-left: 0.8em;
+        margin-top: 0.8em;
+      }
+    }
+    a {
+      @include v.general-a-btn;
+      border-radius: 0.2em;
+      line-height: 1;
+      margin: 0.8em;
+    }
+  }
+  .title-container {
+    margin-top: 5em;
+    max-width: 500px;
+    margin: 5em auto 0;
+  }
+  .card-container {
+    position: relative;
+    margin-top: 6em;
+    display: flex;
+    row-gap: 2em;
+    column-gap: 3%;
+    @include v.for-small-device {
+      flex-direction: column;
+    }
+    .line {
+      position: absolute;
+      z-index: 0;
+      @include v.for-not-small-device {
+        border-top: 6px solid v.$cyan;
+        top: 50%;
+        width: 100%;
+      }
+      @include v.for-small-device {
+        border-right: 6px solid v.$cyan;
+        top: 0;
+        width: calc(50% + 2px);
+        height: 100%;
+      }
+    }
+    .card-content {
+      flex: 1 1 0;
+      padding-left: 1em;
+      padding-right: 1em;
+      background-color: white;
+      border-radius: 0.2em;
+      .svg {
+        background-color: v.$darkViolet;
+        height: 80px;
+        width: 80px;
+        border-radius: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-50%);
+        @include v.for-small-device {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      h4 {
+        margin-bottom: 1em;
+      }
+      p {
+        font-size: 0.8em;
+      }
+    }
+  }
+}

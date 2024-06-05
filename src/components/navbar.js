@@ -1,6 +1,5 @@
 import Link from './link';
 import Button from './button';
-import '../styles/navbar.scss';
 import Logo from '../assets/logo.svg';
 
 function Navbar () {
