@@ -1,10 +1,10 @@
 import Navbar from './components/navbar';
 import Button from './components/button';
-import History from './components/history';
+import Shorten from './components/shorten';
 import Card from './components/card';
+import Footer from './components/footer';
 import iw from './assets/illustration-working.svg';
 import './styles/app.scss';
-
 
 function App() {
   return (
@@ -20,13 +20,9 @@ function App() {
           </div>
           <img id="mainSvg" alt="iullstration-workding" src={iw} />
         </div>
-        <div className="form-container">
-          <input className="form" placeholder="Shorten a link here..." />
-          <Button page="shorten" text="Shorten It!"/>
-        </div>
       </div>
+      <Shorten />
       <div className="feature container">
-        <History />
         <div className="title-container">
           <h1>Advanced Statistics</h1>
           <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
@@ -36,11 +32,13 @@ function App() {
           <Card />
         </div>
       </div>
-      <div className="container">
-        <h3>Boost your links today</h3>
-        {/* <Button text={"Get Started"} /> */}
+      <div className="boost container">
+        <div className="title-container">
+          <h2>Boost your links today</h2>
+          <Button page={"start"} text={"Get Started"} />
+        </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

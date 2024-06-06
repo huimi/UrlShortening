@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "navbar" as navbar;
+@use "footer" as footer;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -28,9 +29,11 @@ p {
 .container {
   padding-left: 3.5em;
   padding-right: 3.5em;
-  @media screen and (max-width: v.$small) {
+  padding-bottom: 6em;
+  @include v.for-small-device {
     padding-left: 2em;
     padding-right: 2em;
+    padding-bottom: 10em;
   }
 }
 
@@ -53,33 +56,47 @@ p {
     .title-container {
       min-width: 50%;
       text-align: left;
-      a {
-        @include v.general-a-btn;
-      }
       @include v.for-small-device {
         width: 100%;
         text-align: center;
         order: 1;
       }
+      a {
+        @include v.general-a-btn;
+      }
+    }
+  }
+}
+
+.shorten {
+  background-color: v.$grayWhite;
+  .translate-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    @include v.for-small-device {
+      transform: translateY(-108px);
+    }
+    @include v.for-not-small-device {
+      transform: translateY(-61px);
     }
   }
   .form-container {
     margin-top: auto;
     border-radius: 0.4em;
     padding: 2em;
-    transform: translateY(50%);
     background-color: v.$darkViolet;
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    gap: 1em;
-    // background settings
-    background-image: url('../assets/bg-shorten-desktop.svg');
-    background-size: 100% 100%;
+    @include v.for-not-small-device {
+      display: grid;
+      grid-template-columns: 5fr 1fr;
+      gap: 1em;
+      background-image: url('../assets/bg-shorten-desktop.svg');
+      background-size: 100% 100%;
+    }
     @include v.for-small-device {
       display: flex;
       flex-direction: column;
       gap: 2.5em;
-      // background settings
       background-image: url('../assets/bg-shorten-mobile.svg');
       background-position: right top;
       background-size: auto 70%;
@@ -92,19 +109,8 @@ p {
       border-radius: 0.4em;
     }
     a {
-      @include v.general-a-btn;
-      border-radius: 0.4em;
+      @include v.general-a-btn($borderRadius: 0.4em);
     }
-  }
-}
-
-// feature section
-.feature {
-  background-color: v.$grayWhite;
-  padding-top: 4.5em;
-  padding-bottom: 8em;
-  @include v.for-small-device {
-    padding-top: 7em;
   }
   .history-container {
     border-radius: 0.2em;
@@ -133,16 +139,19 @@ p {
       }
     }
     a {
-      @include v.general-a-btn;
-      border-radius: 0.2em;
+      @include v.general-a-btn($borderRadius: 0.2em);
       line-height: 1;
       margin: 0.8em;
     }
   }
+}
+
+// feature section
+.feature {
+  background-color: v.$grayWhite;
   .title-container {
-    margin-top: 5em;
     max-width: 500px;
-    margin: 5em auto 0;
+    margin: auto;
   }
   .card-container {
     position: relative;
@@ -194,6 +203,31 @@ p {
       p {
         font-size: 0.8em;
       }
+    }
+  }
+}
+
+.boost {
+  padding: 2em;
+  background-size: 100% 100%;
+  min-height: 270px;
+  background-color: v.$darkViolet;
+  @include v.for-not-small-device {    
+    background-image: url('../assets/bg-boost-desktop.svg');
+  }
+  @include v.for-small-device {
+    background-image: url('../assets/bg-boost-mobile.svg');
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .title-container {
+    h2 {
+      color: white;
+      margin-bottom: 1em;
+    }
+    a {
+      @include v.general-a-btn;
     }
   }
 }

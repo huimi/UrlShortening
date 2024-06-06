@@ -23,12 +23,19 @@ $grayishViolet: hsl(257, 7%, 63%);
 $veryDarkBlue: hsl(255, 11%, 22%);
 $veryDarkViolet: hsl(260, 8%, 14%);
 
+$xsmall: 450px;
 $small: 600px;
 $medium: 768px;
 
 $fontSize: 18px;
 
 $fontFamily: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
+
+@mixin for-xsmall-device {
+  @media screen and (max-width: $xsmall) {
+    @content;
+  }
+}
 
 @mixin for-small-device {
   @media screen and (max-width: $small) {
@@ -63,23 +70,24 @@ $fontFamily: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
   list-style: none;
 }
 
-@mixin general-a-link {
+@mixin general-a-link($hover: $cyan) {
   text-decoration: none;
+  color: $grayishViolet;
   &:hover {
-    color: $veryDarkBlue;
+    color: $hover;
   }
 }
 
-@mixin general-a-btn {  
+@mixin general-a-btn($borderRadius: 2em) {  
   text-decoration: none;
   color: white;
   white-space: nowrap;
   background-color: $cyan;
-  padding-left: 1.2em;
-  padding-right: 1.2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   padding-top: 0.625em;
   padding-bottom: 0.625em;
-  border-radius: 2em;
+  border-radius: $borderRadius;
   display: inline-block;
   text-align: center;
   &:hover {
