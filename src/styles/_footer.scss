@@ -34,7 +34,7 @@ footer {
         @include v.reset-ul;
       }
       a {
-        @include v.general-a-link;
+        @include v.general-link;
         font-size: 0.8em;
       }
     }

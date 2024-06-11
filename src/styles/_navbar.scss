@@ -20,13 +20,13 @@ nav {
     align-items: center;
     column-gap: 0.8em;
   }
-  a.link {
-    @include v.general-a-link($hover: v.$veryDarkBlue);
+  a {
+    @include v.general-link($hover: v.$veryDarkBlue);
     font-size: 0.8em;
     font-weight: 500;
   }
-  a.btn {
-    @include v.general-a-btn;
+  button {
+    @include v.general-btn;
     font-size: 0.8em;
     line-height: 1.2;
   }

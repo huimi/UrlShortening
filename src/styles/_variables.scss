@@ -58,11 +58,19 @@ $fontFamily: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
   }
 }
 
+input, button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 @mixin reset-input {
-  font-family: $fontFamily;
-  font-size: $fontSize;
+  color: $veryDarkBlue;
   &::placeholder {
+    opacity: 0.5;
     color: $gray;
+  }
+  &.error::placeholder {
+    color: $red;
   }
 }
 
@@ -70,7 +78,7 @@ $fontFamily: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
   list-style: none;
 }
 
-@mixin general-a-link($hover: $cyan) {
+@mixin general-link($hover: $cyan) {
   text-decoration: none;
   color: $grayishViolet;
   &:hover {
@@ -78,19 +86,32 @@ $fontFamily: 'Poppins', 'Segoe UI', 'Roboto', sans-serif;
   }
 }
 
-@mixin general-a-btn($borderRadius: 2em) {  
-  text-decoration: none;
-  color: white;
-  white-space: nowrap;
-  background-color: $cyan;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-top: 0.625em;
-  padding-bottom: 0.625em;
-  border-radius: $borderRadius;
+@mixin general-btn($borderRadius: 2em) {
   display: inline-block;
+  border: none;
+  padding: 0.625em 1.5em;
+  margin: 0;
+  text-decoration: none;
+  background-color: $cyan;
+  color: #ffffff;
+  cursor: pointer;
   text-align: center;
+  white-space: nowrap;
+  border-radius: $borderRadius;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   &:hover {
     opacity: 0.8;
+  }
+  &:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+  }
+}
+
+@mixin copy-btn {
+  &:focus {
+    outline: 1px solid $darkViolet;
+    background: $darkViolet;
   }
 }

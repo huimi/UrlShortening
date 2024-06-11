@@ -1,8 +1,7 @@
 
-function Button({page, text}) {
-    return (
-        <a className="btn" href={ page }>{ text }</a>
-    );
+function Button({text, ...props}) {
+  return (
+    <button type="button" {...props}>{ text }</button>
+  );
 }
-
 export default Button;

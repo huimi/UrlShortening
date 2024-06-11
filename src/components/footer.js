@@ -11,34 +11,34 @@ function Footer () {
         <div className="content-container">
           <h4>Features</h4>
           <ul>
-            <li><Link page="shortening" text="Link Shortening" /></li>
-            <li><Link page="branded" text="Branded Links" /></li>
-            <li><Link page="analytics" text="Analytics" /></li>
+            <li><Link href="shortening" text="Link Shortening" /></li>
+            <li><Link href="branded" text="Branded Links" /></li>
+            <li><Link href="analytics" text="Analytics" /></li>
           </ul>
         </div>
         <div className="content-container">
           <h4>Resources</h4>
           <ul>
-            <li><Link page="blog" text="Blog" /></li>
-            <li><Link page="developers" text="Developers" /></li>
-            <li><Link page="support" text="Support" /></li>
+            <li><Link href="blog" text="Blog" /></li>
+            <li><Link href="developers" text="Developers" /></li>
+            <li><Link href="support" text="Support" /></li>
           </ul>
         </div>
         <div className="content-container">
           <h4>Company</h4>
           <ul>
-            <li><Link page="about" text="About" /></li>
-            <li><Link page="team" text="Our Team" /></li>
-            <li><Link page="careers" text="Careers" /></li>
-            <li><Link page="contact" text="Contact" /></li>
+            <li><Link href="about" text="About" /></li>
+            <li><Link href="team" text="Our Team" /></li>
+            <li><Link href="careers" text="Careers" /></li>
+            <li><Link href="contact" text="Contact" /></li>
           </ul>
         </div>
       </div>
       <div className="icon-container">
-          <Link page="facebook" text={ <span className="icon icon-fb"></span> }/>
-          <Link page="twitter" text={ <span className="icon icon-tt"></span> }/>
-          <Link page="pinterest" text={ <span className="icon icon-pt"></span> }/>
-          <Link page="instagram" text={ <span className="icon icon-ig"></span> }/>
+          <Link href="facebook" text={ <span className="icon icon-fb"></span> }/>
+          <Link href="twitter" text={ <span className="icon icon-tt"></span> }/>
+          <Link href="pinterest" text={ <span className="icon icon-pt"></span> }/>
+          <Link href="instagram" text={ <span className="icon icon-ig"></span> }/>
       </div>
     </footer>
   )

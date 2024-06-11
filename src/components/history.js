@@ -1,13 +1,17 @@
 import Button from './button';
+import { useState } from 'react';
 
-function History() {
-  return (
-    <div className="history-container">
-      <div className="url-container">https://frontendmentorio.com</div>
-      <span className="url-right">https://rel.ink/aBcdE1</span>
-      <Button page="copy" text="Copy"/>
-    </div>
-  );
+function History({resultUrl}) {
+  const [copy, setCopy] = useState("Copy");
+  return (<>
+    {resultUrl.map( (e, id) =>
+      <div key={ id } className="history-container">
+        <div className="url-container">{ e.longUrl }</div>
+        <span className="url-right">{ e.shortenUrl }</span>
+        <Button text={ copy } onFocus={() => setCopy("Copied!")} onBlur={() => setCopy("Copy")} />
+      </div>
+    )}
+    </>);
 }
 
 export default History;

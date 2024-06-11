@@ -1,6 +1,6 @@
 import Navbar from './components/navbar';
 import Button from './components/button';
-import Shorten from './components/shorten';
+import Form from './components/form';
 import Card from './components/card';
 import Footer from './components/footer';
 import iw from './assets/illustration-working.svg';
@@ -21,7 +21,7 @@ function App() {
           <img id="mainSvg" alt="iullstration-workding" src={iw} />
         </div>
       </div>
-      <Shorten />
+      <Form />
       <div className="feature container">
         <div className="title-container">
           <h1>Advanced Statistics</h1>

@@ -14,6 +14,7 @@ html, body {
   font-size: v.$fontSize;
   overflow-y: scroll;
   overflow-x: hidden;
+  color: v.$veryDarkBlue;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,8 +62,8 @@ p {
         text-align: center;
         order: 1;
       }
-      a {
-        @include v.general-a-btn;
+      button {
+        @include v.general-btn;
       }
     }
   }
@@ -86,6 +87,14 @@ p {
     border-radius: 0.4em;
     padding: 2em;
     background-color: v.$darkViolet;
+    position: relative;
+
+    .error-container {
+      position: absolute;
+      color: v.$red;
+      font-style: italic;
+      font-weight: 500;
+    }
     @include v.for-not-small-device {
       display: grid;
       grid-template-columns: 5fr 1fr;
@@ -96,7 +105,7 @@ p {
     @include v.for-small-device {
       display: flex;
       flex-direction: column;
-      gap: 2.5em;
+      gap: 2em;
       background-image: url('../assets/bg-shorten-mobile.svg');
       background-position: right top;
       background-size: auto 70%;
@@ -104,18 +113,22 @@ p {
     }
     input {
       @include v.reset-input;
+      width: 100%;
       border: 2px solid white;
       padding: 0.5em;
       border-radius: 0.4em;
     }
-    a {
-      @include v.general-a-btn($borderRadius: 0.4em);
+    input.error, input.error:focus-visible {
+      border-color: v.$red;
     }
+    button {
+      @include v.general-btn($borderRadius: 0.4em);
+    }
+    
   }
   .history-container {
     border-radius: 0.2em;
     background-color: white;
-    color: v.$veryDarkViolet;
     font-size: 0.8em;
     display: flex;
     flex-direction: column;
@@ -138,8 +151,9 @@ p {
         margin-top: 0.8em;
       }
     }
-    a {
-      @include v.general-a-btn($borderRadius: 0.2em);
+    button {
+      @include v.general-btn($borderRadius: 0.2em);
+      @include v.copy-btn;
       line-height: 1;
       margin: 0.8em;
     }
@@ -226,8 +240,8 @@ p {
       color: white;
       margin-bottom: 1em;
     }
-    a {
-      @include v.general-a-btn;
+    button {
+      @include v.general-btn;
     }
   }
 }

@@ -1,7 +1,7 @@
 
-function Link({page, text}) {
+function Link({text, ...props}) {
     return (
-        <a className="link" href={ page }>{ text }</a>
+        <a {...props}>{ text }</a>
     );
 }
 
