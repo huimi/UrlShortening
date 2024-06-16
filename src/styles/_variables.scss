@@ -109,6 +109,27 @@ input, button {
   }
 }
 
+@mixin icon-btn {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    // outline: 1px solid #fff;
+    // outline-offset: -4px;
+  }
+}
+
 @mixin copy-btn {
   &:focus {
     outline: 1px solid $darkViolet;
