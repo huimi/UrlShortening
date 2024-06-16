@@ -38,7 +38,7 @@ function Form() {
         <div className="form-container">
           <div className="input-container" >
             <input 
-              className={error == "" ? "":"error"} 
+              className={error === "" ? "":"error"} 
               placeholder="Shorten a link here..." 
               onChange={ e => setQuery(e.target.value)}
               onFocus={ () => setError('') }
